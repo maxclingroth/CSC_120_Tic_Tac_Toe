@@ -56,4 +56,17 @@ class Tic_Tac_Toe():
             return False
 
 
-game = Tic_Tac_Toe()
+def main():
+    game = Tic_Tac_Toe()
+    game.display()
+    for row in range(len(game.board)):
+        for col in range(len(game.board[row])):
+            print('Check 1:', game.check_mark(row, col))
+            game.place_mark(row, col, 1)
+            game.display()
+            print('Check 2:', game.check_mark(row, col))
+            if game.check_win(1):
+                game.place_mark(row, col, 2)
+
+
+main()
