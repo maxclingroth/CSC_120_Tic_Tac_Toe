@@ -36,10 +36,7 @@ class Tic_Tac_Toe():
 
     # Checks if the selected square is taken
     def check_mark(self, row, col):
-        if self.board[row][col] == '-':
-            return True
-        else:
-            return False
+        return self.board[row][col] == '-'
 
     # Places a mark at selected square
     def place_mark(self, row, col, player):
@@ -145,7 +142,7 @@ class Tic_Tac_Toe():
                     for row in range(len(self.board)):
                         for col in range(len((self.board[row]))):
                             final_board += f'{self.board[row][col]}   '
-                        final_board += '\n'
+                        final_board += 'n'
                     cur.execute(f"INSERT INTO games (game_id, result, final_board)"
                                 f" VALUES ({high}, 'Tie', '{final_board}')")
             # Changes the player
